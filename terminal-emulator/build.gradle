@@ -8,6 +8,7 @@ android {
     ndkVersion = System.getenv("JITPACK_NDK_VERSION") ?: project.properties.ndkVersion
 
     defaultConfig {
+        ndk { abiFilters 'arm64-v8a' }
         minSdkVersion project.properties.minSdkVersion.toInteger()
         targetSdkVersion project.properties.targetSdkVersion.toInteger()
 
@@ -18,7 +19,7 @@ android {
         }
 
         ndk {
-            abiFilters 'x86', 'x86_64', 'armeabi-v7a', 'arm64-v8a'
+            abiFilters 'arm64-v8a'
         }
     }
 
